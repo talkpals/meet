@@ -1,0 +1,21 @@
+# No version attribute needed for Docker Compose v2+
+
+services:
+  livekit-meet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3012:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_CONN_DETAILS_ENDPOINT=/api/connection-details
+      - NEXT_PUBLIC_SHOW_SETTINGS_MENU=true
+      # You should configure these environment variables in a .env file or directly here
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET}
+      - LIVEKIT_URL=${LIVEKIT_URL}
+    restart: unless-stopped
+    # For persistent storage (if needed)
+    volumes:
+      - ./.env.local:/app/.env.local:ro
