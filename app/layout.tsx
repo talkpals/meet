@@ -15,18 +15,6 @@ export const metadata: Metadata = {
     site: '@livekitted',
     card: 'summary_large_image',
   },
-  openGraph: {
-    url: 'talkpals.io',
-    images: [
-      {
-        url: '.',
-        width: 2000,
-        height: 1000,
-        type: 'image/png',
-      },
-    ],
-    siteName: 'TalkPals',
-  },
   icons: {
     icon: {
       rel: 'icon',
