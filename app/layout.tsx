@@ -9,26 +9,7 @@ export const metadata: Metadata = {
     template: '%s',
   },
   description:
-    'TalkPals',
-  twitter: {
-    creator: '@livekitted',
-    site: '@livekitted',
-    card: 'summary_large_image',
-  },
-  icons: {
-    icon: {
-      rel: 'icon',
-      url: '/favicon.ico',
-    },
-    apple: [
-      {
-        rel: 'apple-touch-icon',
-        url: '/images/livekit-apple-touch.png',
-        sizes: '180x180',
-      },
-      { rel: 'mask-icon', url: '/images/livekit-safari-pinned-tab.svg', color: '#070707' },
-    ],
-  },
+    'TalkPals'
 };
 
 export const viewport: Viewport = {

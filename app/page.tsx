@@ -96,10 +96,10 @@ function CustomConnectionTab(props: { label: string }) {
     const token = formData.get('token');
     if (e2ee) {
       router.push(
-        `/custom/?liveKitUrl=${serverUrl}&token=${token}#${encodePassphrase(sharedPassphrase)}`,
+        `/custom/?Url=${serverUrl}&token=${token}#${encodePassphrase(sharedPassphrase)}`,
       );
     } else {
-      router.push(`/custom/?liveKitUrl=${serverUrl}&token=${token}`);
+      router.push(`/custom/?Url=${serverUrl}&token=${token}`);
     }
   };
   return (

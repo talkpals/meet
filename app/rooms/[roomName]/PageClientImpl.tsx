@@ -40,7 +40,7 @@ export function PageClientImpl(props: {
   const preJoinDefaults = React.useMemo(() => {
     return {
       username: '',
-      videoEnabled: true,
+      videoEnabled: false,
       audioEnabled: true,
     };
   }, []);
@@ -108,10 +108,7 @@ function VideoConferenceComponent(props: {
       videoCodec = undefined;
     }
     return {
-      videoCaptureDefaults: {
-        deviceId: props.userChoices.videoDeviceId ?? undefined,
-        resolution: props.options.hq ? VideoPresets.h2160 : VideoPresets.h720,
-      },
+      videoCaptureDefaults: false,
       publishDefaults: {
         dtx: false,
         videoSimulcastLayers: props.options.hq
@@ -185,7 +182,7 @@ function VideoConferenceComponent(props: {
         token={props.connectionDetails.participantToken}
         serverUrl={props.connectionDetails.serverUrl}
         connectOptions={connectOptions}
-        video={props.userChoices.videoEnabled}
+        video={false}
         audio={props.userChoices.audioEnabled}
         onDisconnected={handleOnLeave}
         onEncryptionError={handleEncryptionError}
