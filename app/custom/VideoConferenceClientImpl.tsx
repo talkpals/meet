@@ -30,7 +30,6 @@ export function VideoConferenceClientImpl(props: {
   const e2eeEnabled = !!(e2eePassphrase && worker);
   const roomOptions = useMemo((): RoomOptions => {
     return {
-      videoCaptureDefaults: false,
       publishDefaults: {
         videoSimulcastLayers: [VideoPresets.h540, VideoPresets.h216],
         red: !e2eeEnabled,

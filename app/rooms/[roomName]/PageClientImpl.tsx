@@ -108,7 +108,6 @@ function VideoConferenceComponent(props: {
       videoCodec = undefined;
     }
     return {
-      videoCaptureDefaults: false,
       publishDefaults: {
         dtx: false,
         videoSimulcastLayers: props.options.hq
