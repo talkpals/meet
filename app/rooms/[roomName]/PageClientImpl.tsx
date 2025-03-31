@@ -37,13 +37,20 @@ export function PageClientImpl(props: {
   const [preJoinChoices, setPreJoinChoices] = React.useState<LocalUserChoices | undefined>(
     undefined,
   );
+  
+  // Get participant name from URL parameters
+  const defaultUsername = typeof window !== 'undefined' 
+    ? new URLSearchParams(window.location.search).get('name') || 'Student'
+    : 'Student';
+    
   const preJoinDefaults = React.useMemo(() => {
     return {
-      username: '',
+      username: defaultUsername,
       videoEnabled: false,
       audioEnabled: true,
     };
-  }, []);
+  }, [defaultUsername]);
+  
   const [connectionDetails, setConnectionDetails] = React.useState<ConnectionDetails | undefined>(
     undefined,
   );
